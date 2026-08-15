@@ -8,13 +8,18 @@
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>فروتن پور | نویسنده</title>
+        <title data-fa="فروتن پور | نویسنده" data-en="Forotan Pour | Author">فروتن پور | نویسنده</title>
         <!-- فونت وزیرمتن برای زیبایی متن‌های فارسی -->
         <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
+        <!-- دکمه تغییر زبان -->
+        <button id="lang-toggle" class="lang-toggle" aria-label="Change Language">
+            <span id="lang-text">EN</span>
+        </button>
+
         <!-- دکمه تغییر تم (حباب شفاف آبی) -->
-        <button id="theme-toggle" class="theme-toggle" aria-label="تغییر تم سایت">
+        <button id="theme-toggle" class="theme-toggle" aria-label="تغییر تم سایت" data-fa-aria="تغییر تم سایت" data-en-aria="Toggle Theme">
             <!-- آیکون آفتاب (نمایش در حالت تاریک) -->
             <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
             <!-- آیکون ماه (نمایش در حالت روشن) -->
@@ -33,13 +38,13 @@
                     <img src="/author-photo.jpg" alt="فروتن پور لنگرودی" class="profile-img" />
                 </div>
                 
-                <h1 class="name">فروتن پور لنگرودی</h1>
-                <h2 class="title">نویسنده</h2>
+                <h1 class="name" data-fa="فروتن پور لنگرودی" data-en="Forotan Pour Langroudi">فروتن پور لنگرودی</h1>
+                <h2 class="title" data-fa="نویسنده" data-en="Author">نویسنده</h2>
 
                 <!-- بخش درباره من -->
                 <div class="about-me">
-                    <h3 class="section-title">درباره من</h3>
-                    <p class="about-text">
+                    <h3 class="section-title" data-fa="درباره من" data-en="About Me">درباره من</h3>
+                    <p class="about-text" data-fa="پیش از این، با نوشتن فقط افکارم را روی کاغذ می‌آوردم، اما حالا با نوشتن زمان را به بازی می‌گیرم؛ زمانی که عصاره‌اش در قالب جوهر خودنویس روی سپیدی کاغذ می‌ریزد، خودش را کش می‌آورد، لم می‌دهد و برایم قیافه می‌گیرد." data-en="Previously, I merely transferred my thoughts onto paper by writing, but now I play with time through writing; a time whose essence, poured onto the whiteness of paper in the form of fountain pen ink, stretches out, bends, and takes shape for me.">
                         پیش از این، با نوشتن فقط افکارم را روی کاغذ می‌آوردم، اما حالا با نوشتن زمان را به بازی می‌گیرم؛ زمانی که عصاره‌اش در قالب جوهر خودنویس روی سپیدی کاغذ می‌ریزد، خودش را کش می‌آورد، لم می‌دهد و برایم قیافه می‌گیرد.
                     </p>
                 </div>
@@ -51,21 +56,21 @@
                         <img src="/book-cover.jpg" alt="عنوان کتاب" class="book-cover" />
                     </div>
                     <div class="book-info">
-                        <h3 class="section-title">آخرین اثر منتشر شده</h3>
-                        <h4 class="book-title">عنوان کتاب شما</h4>
-                        <p class="book-description">
+                        <h3 class="section-title" data-fa="آخرین اثر منتشر شده" data-en="Latest Published Work">آخرین اثر منتشر شده</h3>
+                        <h4 class="book-title" data-fa="عنوان کتاب شما" data-en="Your Book Title">عنوان کتاب شما</h4>
+                        <p class="book-description" data-fa="در این بخش می‌توانید خلاصه‌ای از داستان یا توضیحاتی درباره کتاب جدید خود را بنویسید. متن باید جذاب باشد و مخاطب را به خواندن یا خرید کتاب ترغیب کند. می‌توانید درباره تم اصلی داستان و حسی که به خواننده منتقل می‌کند بنویسید." data-en="In this section, you can write a summary of the story or details about your new book. The text should be engaging and encourage the reader to read or purchase the book. You can write about the main theme of the story and the feeling it conveys to the reader.">
                             در این بخش می‌توانید خلاصه‌ای از داستان یا توضیحاتی درباره کتاب جدید خود را بنویسید. متن باید جذاب باشد و مخاطب را به خواندن یا خرید کتاب ترغیب کند. می‌توانید درباره تم اصلی داستان و حسی که به خواننده منتقل می‌کند بنویسید.
                         </p>
                         
-                        <!-- دکمه‌های خرید و دانلود (منتقل شده به این بخش) -->
+                        <!-- دکمه‌های خرید و دانلود -->
                         <div class="book-actions">
                             <a href="#" target="_blank" class="btn btn-primary">
                                 <svg viewBox="0 0 24 24" class="btn-icon"><path d="M21 5c-1.11-.9-2.67-1.5-4.5-1.5-1.83 0-3.39.6-4.5 1.5-1.11-.9-2.67-1.5-4.5-1.5-1.83 0-3.39.6-4.5 1.5V22c1.11-.9 2.67-1.5 4.5-1.5 1.83 0 3.39.6 4.5 1.5 1.11-.9 2.67-1.5 4.5-1.5 1.83 0 3.39.6 4.5 1.5V5z"/></svg>
-                                خرید فیزیکی
+                                <span class="btn-text" data-fa="خرید فیزیکی" data-en="Buy Physical">خرید فیزیکی</span>
                             </a>
                             <a href="#" target="_blank" class="btn btn-secondary">
                                 <svg viewBox="0 0 24 24" class="btn-icon"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                                دانلود PDF
+                                <span class="btn-text" data-fa="دانلود PDF" data-en="Download PDF">دانلود PDF</span>
                             </a>
                         </div>
                     </div>
@@ -89,13 +94,16 @@
     </body>
 </html>
 
-<!-- اسکریپت تغییر تم -->
+<!-- اسکریپت تغییر تم و زبان -->
 <script is:inline>
     const html = document.documentElement;
     const toggleBtn = document.getElementById('theme-toggle');
     const sunIcon = document.getElementById('icon-sun');
     const moonIcon = document.getElementById('icon-moon');
+    const langToggle = document.getElementById('lang-toggle');
+    const langText = document.getElementById('lang-text');
 
+    // --- مدیریت تغییر تم ---
     const applyTheme = (theme) => {
         html.setAttribute('data-theme', theme);
         if (theme === 'dark') {
@@ -107,16 +115,41 @@
         }
     };
 
-    // بارگذاری تم ذخیره شده
     const savedTheme = localStorage.getItem('theme') || 'dark';
     applyTheme(savedTheme);
 
-    // رویداد کلیک
     toggleBtn.addEventListener('click', () => {
         const currentTheme = html.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         applyTheme(newTheme);
         localStorage.setItem('theme', newTheme);
+    });
+
+    // --- مدیریت تغییر زبان ---
+    const applyLang = (lang) => {
+        html.setAttribute('lang', lang);
+        html.setAttribute('dir', lang === 'fa' ? 'rtl' : 'ltr');
+        langText.textContent = lang === 'fa' ? 'EN' : 'FA';
+        
+        // تغییر متن‌ها
+        document.querySelectorAll('[data-en]').forEach(el => {
+            el.textContent = lang === 'fa' ? el.getAttribute('data-fa') : el.getAttribute('data-en');
+        });
+        
+        // تغییر aria-label ها
+        document.querySelectorAll('[data-en-aria]').forEach(el => {
+            el.setAttribute('aria-label', lang === 'fa' ? el.getAttribute('data-fa-aria') : el.getAttribute('data-en-aria'));
+        });
+    };
+
+    const savedLang = localStorage.getItem('lang') || 'fa';
+    applyLang(savedLang);
+
+    langToggle.addEventListener('click', () => {
+        const currentLang = html.getAttribute('lang');
+        const newLang = currentLang === 'fa' ? 'en' : 'fa';
+        applyLang(newLang);
+        localStorage.setItem('lang', newLang);
     });
 </script>
 
@@ -133,12 +166,12 @@
 
     /* --- پالت رنگی حالت روشن --- */
     [data-theme="light"] {
-        --bg-main: #F4F1ED; /* کرمی/پوستی بسیار روشن */
-        --text-main: #0C191A; /* استفاده از رنگ تیره اصلی به عنوان متن */
-        --accent-color: #A68B4B; /* طلایی کمی تیره‌تر برای کنتراست بهتر روی پس‌زمینه روشن */
-        --border-color: #D6D1CA; /* حاشیه خاکستری گرم */
-        --text-muted: #6B7B7C; /* متن‌های کم‌رنگ‌تر */
-        --card-bg: rgba(255, 255, 255, 0.7); /* پس‌زمینه کارت سفید شفاف */
+        --bg-main: #F4F1ED; 
+        --text-main: #0C191A; 
+        --accent-color: #A68B4B; 
+        --border-color: #D6D1CA; 
+        --text-muted: #6B7B7C; 
+        --card-bg: rgba(255, 255, 255, 0.7); 
     }
 
     * {
@@ -153,7 +186,7 @@
         color: var(--text-main);
         min-height: 100vh;
         overflow-x: hidden;
-        transition: background-color 0.4s ease, color 0.4s ease; /* انیمیشن تغییر رنگ */
+        transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     /* مخفی کردن نوار ابزار Astro */
@@ -161,36 +194,45 @@
         display: none !important;
     }
 
-    /* --- استایل دکمه حباب آبی تغییر تم --- */
-    .theme-toggle {
+    /* --- استایل دکمه‌های شناور --- */
+    .theme-toggle, .lang-toggle {
         position: fixed;
         top: 20px;
-        left: 20px; /* در RTL این در سمت راست بالا قرار می‌گیرد */
         z-index: 100;
         width: 50px;
         height: 50px;
         border-radius: 50%;
         border: 1px solid rgba(33, 150, 243, 0.4);
-        background-color: rgba(33, 150, 243, 0.15); /* آبی شفاف */
-        backdrop-filter: blur(12px); /* افکت شیشه مات */
+        background-color: rgba(33, 150, 243, 0.15);
+        backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         box-shadow: 0 4px 15px rgba(33, 150, 243, 0.25), inset 0 0 10px rgba(33, 150, 243, 0.1);
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #2196F3; /* رنگ آیکون */
+        color: #2196F3;
         transition: all 0.3s ease;
     }
 
-    .theme-toggle:hover {
+    .theme-toggle {
+        left: 20px; /* چپ در LTR، راست در RTL (با منطق فیزیکی) */
+    }
+
+    .lang-toggle {
+        left: 80px; /* کنار دکمه تم */
+        font-weight: 700;
+        font-size: 0.9rem;
+    }
+
+    .theme-toggle:hover, .lang-toggle:hover {
         background-color: rgba(33, 150, 243, 0.3);
         box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4), inset 0 0 15px rgba(33, 150, 243, 0.2);
         transform: scale(1.05);
     }
 
     #icon-moon {
-        display: none; /* به صورت پنهان تا جاوااسکریپت آن را مدیریت کند */
+        display: none;
     }
 
     .pattern-bg {
@@ -280,28 +322,28 @@
         color: var(--text-main);
         font-size: 1.5rem;
         margin-bottom: 15px;
-        text-align: right;
+        text-align: start; /* تراز خودکار با جهت متن */
     }
 
-    /* --- استایل بخش معرفی کتاب جدید --- */
+    /* --- استایل بخش معرفی کتاب --- */
     .book-showcase {
         display: flex;
         gap: 30px;
         margin-bottom: 40px;
         padding-bottom: 30px;
         border-bottom: 1px solid var(--border-color);
-        text-align: right;
-        align-items: center; /* تراز عمودی در وسط */
+        text-align: start;
+        align-items: center;
         transition: border-color 0.4s ease;
     }
 
     .book-cover-wrapper {
-        flex: 0 0 140px; /* عرض ثابت برای عکس جلد */
+        flex: 0 0 140px;
         max-width: 140px;
         border-radius: 8px;
         overflow: hidden;
         box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-        aspect-ratio: 2/3; /* نسبت ابعاد استاندارد برای جلد کتاب */
+        aspect-ratio: 2/3;
         transition: transform 0.3s ease;
     }
 
@@ -334,10 +376,10 @@
         text-align: justify;
     }
 
-    /* --- استایل بخش دکمه‌های کتاب --- */
+    /* --- استایل دکمه‌های کتاب --- */
     .book-actions {
         display: flex;
-        justify-content: flex-start; /* چپ‌چین شدن دکمه‌ها در کنار کتاب */
+        justify-content: flex-start;
         gap: 12px;
     }
 
@@ -388,7 +430,7 @@
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
-    /* --- استایل شبکه‌های اجتماعی با افکت حباب آبی --- */
+    /* --- استایل شبکه‌های اجتماعی --- */
     .social-links {
         display: flex;
         justify-content: center;
@@ -435,10 +477,9 @@
             font-size: 1.8rem;
         }
         
-        /* تبدیل چیدمان کتاب به حالت ستونی (عمودی) در موبایل */
         .book-showcase {
             flex-direction: column;
-            text-align: center; /* وسط‌چین کردن متن‌ها در موبایل */
+            text-align: center;
             align-items: center;
         }
         .book-cover-wrapper {
@@ -454,15 +495,21 @@
             width: 100%;
         }
         .book-actions {
-            justify-content: center; /* وسط‌چین کردن دکمه‌ها در موبایل */
+            justify-content: center;
         }
         
-        /* جابجایی دکمه تم در موبایل تا با کارت تداخل نداشته باشد */
         .theme-toggle {
             top: 10px;
             left: 10px;
             width: 40px;
             height: 40px;
+        }
+        .lang-toggle {
+            top: 10px;
+            left: 60px;
+            width: 40px;
+            height: 40px;
+            font-size: 0.8rem;
         }
     }
 </style>
