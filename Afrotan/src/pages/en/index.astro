@@ -1,54 +1,14 @@
 ---
-// فایل: src/layouts/ProfileLayout.astro
-const { lang } = Astro.props;
-
-const content = {
-  fa: {
-    dir: 'rtl',
-    htmlLang: 'fa',
-    title: 'فروتن پور | نویسنده',
-    btnTheme: 'تغییر تم سایت',
-    name: 'فروتن پور لنگرودی',
-    role: 'نویسنده',
-    aboutTitle: 'درباره من',
-    aboutText: 'پیش از این، با نوشتن فقط افکارم را روی کاغذ می‌آوردم، اما حالا با نوشتن زمان را به بازی می‌گیرم؛ زمانی که عصاره‌اش در قالب جوهر خودنویس روی سپیدی کاغذ می‌ریزد، خودش را کش می‌آورد، لم می‌دهد و برایم قیافه می‌گیرد.',
-    bookIntroTitle: 'معرفی کتاب',
-    bookTitle: 'عنوان کتاب شما',
-    bookDesc: 'در اینجا می‌توانید خلاصه‌ای از داستان یا ایده اصلی کتاب خود را بنویسید. فضایی برای جذب مخاطب ایجاد کنید تا با خواندن این متن، تشنه خواندن کل کتاب شود. می‌توانید درباره فضای داستان، شخصیت‌های اصلی یا حس و حال کلی کتاب بنویسید.',
-    btnBuy: 'خرید فیزیکی',
-    btnDownload: 'دانلود PDF',
-    langLink: '/en/',
-    langText: 'English'
-  },
-  en: {
-    dir: 'ltr',
-    htmlLang: 'en',
-    title: 'Forotan Pour | Author',
-    btnTheme: 'Toggle Theme',
-    name: 'Forotan Pour Langroudi',
-    role: 'Author',
-    aboutTitle: 'About Me',
-    aboutText: 'Previously, by writing, I only put my thoughts on paper, but now by writing, I play with time; a time whose essence is poured in the form of fountain pen ink onto the whiteness of paper, stretching, breathing, and taking shape for me.',
-    bookIntroTitle: 'Book Introduction',
-    bookTitle: 'Your Book Title',
-    bookDesc: 'Here you can write a summary of your story or the main idea of your book. Create a space to attract the audience so that by reading this text, they become eager to read the entire book. You can write about the setting, main characters, or the overall vibe of the book.',
-    btnBuy: 'Physical Purchase',
-    btnDownload: 'Download PDF',
-    langLink: '/',
-    langText: 'فارسی'
-  }
-};
-
-const t = content[lang] || content.fa;
+// فایل: src/pages/en/index.astro
 ---
 
-<html lang={t.htmlLang} dir={t.dir} data-theme="dark">
+<html lang="en" dir="ltr" data-theme="dark">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>{t.title}</title>
+        <title>Forotan Pour | Author</title>
         
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
         <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
@@ -59,13 +19,13 @@ const t = content[lang] || content.fa;
         </script>
     </head>
     <body>
-        <!-- دکمه تغییر زبان -->
-        <a href={t.langLink} class="lang-toggle" aria-label="Language Toggle">
-            {t.langText}
+        <!-- Language Toggle Button -->
+        <a href="/" class="lang-toggle" aria-label="Language Toggle">
+            فارسی
         </a>
 
-        <!-- دکمه تغییر تم -->
-        <button id="theme-toggle" class="theme-toggle" aria-label={t.btnTheme}>
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
             <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
             <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
         </button>
@@ -75,26 +35,30 @@ const t = content[lang] || content.fa;
         <main class="container">
             <div class="profile-card">
                 <div class="profile-image-wrapper">
-                    <img src="/author-photo.jpg" alt={t.name} class="profile-img" />
+                    <img src="/author-photo.jpg" alt="Forotan Pour Langroudi" class="profile-img" />
                 </div>
                 
-                <h1 class="name">{t.name}</h1>
-                <h2 class="title">{t.role}</h2>
+                <h1 class="name">Forotan Pour Langroudi</h1>
+                <h2 class="title">Author</h2>
 
                 <div class="about-me">
-                    <h3 class="section-title">{t.aboutTitle}</h3>
-                    <p class="about-text">{t.aboutText}</p>
+                    <h3 class="section-title">About Me</h3>
+                    <p class="about-text">
+                        Previously, by writing, I only put my thoughts on paper, but now by writing, I play with time; a time whose essence is poured in the form of fountain pen ink onto the whiteness of paper, stretching, breathing, and taking shape for me.
+                    </p>
                 </div>
 
                 <div class="book-intro">
-                    <h3 class="section-title">{t.bookIntroTitle}</h3>
+                    <h3 class="section-title">Book Introduction</h3>
                     <div class="book-content">
                         <div class="book-cover-wrapper">
-                            <img src="/book-cover.jpg" alt={t.bookTitle} class="book-cover" />
+                            <img src="/book-cover.jpg" alt="Your Book Title" class="book-cover" />
                         </div>
                         <div class="book-details">
-                            <h4 class="book-title">{t.bookTitle}</h4>
-                            <p class="book-desc">{t.bookDesc}</p>
+                            <h4 class="book-title">Your Book Title</h4>
+                            <p class="book-desc">
+                                Here you can write a summary of your story or the main idea of your book. Create a space to attract the audience so that by reading this text, they become eager to read the entire book. You can write about the setting, main characters, or the overall vibe of the book.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -102,11 +66,11 @@ const t = content[lang] || content.fa;
                 <div class="book-actions">
                     <a href="#" target="_blank" class="btn btn-primary">
                         <svg viewBox="0 0 24 24" class="btn-icon"><path d="M21 5c-1.11-.9-2.67-1.5-4.5-1.5-1.83 0-3.39.6-4.5 1.5-1.11-.9-2.67-1.5-4.5-1.5-1.83 0-3.39.6-4.5 1.5V22c1.11-.9 2.67-1.5 4.5-1.5 1.83 0 3.39.6 4.5 1.5 1.11-.9 2.67-1.5 4.5-1.5 1.83 0 3.39.6 4.5 1.5V5z"/></svg>
-                        {t.btnBuy}
+                        Physical Purchase
                     </a>
                     <a href="#" target="_blank" class="btn btn-secondary">
                         <svg viewBox="0 0 24 24" class="btn-icon"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                        {t.btnDownload}
+                        Download PDF
                     </a>
                 </div>
 
@@ -154,7 +118,7 @@ const t = content[lang] || content.fa;
 </script>
 
 <style is:global>
-    /* --- پالت رنگی حالت تاریک (پیش‌فرض) --- */
+    /* --- Dark Theme Palette (Default) --- */
     :root {
         --bg-main: #0C191A;
         --text-main: #EDE5DD;
@@ -164,7 +128,7 @@ const t = content[lang] || content.fa;
         --card-bg: rgba(12, 25, 26, 0.85);
     }
 
-    /* --- پالت رنگی حالت روشن --- */
+    /* --- Light Theme Palette --- */
     [data-theme="light"] {
         --bg-main: #F4F1ED; 
         --text-main: #0C191A; 
@@ -189,11 +153,11 @@ const t = content[lang] || content.fa;
         transition: background-color 0.4s ease, color 0.4s ease;
     }
 
-    /* --- دکمه تغییر زبان --- */
+    /* --- Language Toggle Button --- */
     .lang-toggle {
         position: fixed;
         top: 20px;
-        left: 20px;
+        left: 20px; /* Kept on left for LTR layout */
         z-index: 100;
         height: 50px;
         padding: 0 20px;
@@ -220,11 +184,11 @@ const t = content[lang] || content.fa;
         color: #2196F3;
     }
 
-    /* --- دکمه تغییر تم --- */
+    /* --- Theme Toggle Button --- */
     .theme-toggle {
         position: fixed;
         top: 20px;
-        right: 20px;
+        right: 20px; /* Kept on right for LTR layout */
         z-index: 100;
         width: 50px;
         height: 50px;
@@ -354,7 +318,7 @@ const t = content[lang] || content.fa;
         flex-direction: row; 
         gap: 25px;
         align-items: center;
-        text-align: right;
+        text-align: left; /* Changed to left for LTR English */
     }
 
     .book-cover-wrapper {
