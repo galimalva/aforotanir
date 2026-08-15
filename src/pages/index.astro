@@ -1,23 +1,468 @@
 ---
-import '../styles/global.css';
-import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Footer from '../components/Footer.astro';
+// فایل اصلی src/pages/index.astro
 ---
 
-<html lang="fa" dir="rtl" class="scroll-smooth">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>فروتن پور لنگرودی</title>
-  </head>
-  <body class="overflow-x-hidden">
-    
-    <main>
-      <Hero />
-      <About />
-    </main>
-    <Footer />
+<html lang="fa" dir="rtl" data-theme="dark">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>فروتن پور | نویسنده</title>
+        <!-- فونت وزیرمتن برای زیبایی متن‌های فارسی -->
+        <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <!-- دکمه تغییر تم (حباب شفاف آبی) -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="تغییر تم سایت">
+            <!-- آیکون آفتاب (نمایش در حالت تاریک) -->
+            <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <!-- آیکون ماه (نمایش در حالت روشن) -->
+            <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
 
-  </body>
+        <!-- بخش پس‌زمینه با پترن جدید -->
+        <div class="pattern-bg"></div>
+
+        <!-- محتوای اصلی -->
+        <main class="container">
+            <!-- کارت پروفایل -->
+            <div class="profile-card">
+                <div class="profile-image-wrapper">
+                    <!-- عکس نویسنده را در پوشه public قرار دهید -->
+                    <img src="/author-photo.jpg" alt="فروتن پور لنگرودی" class="profile-img" />
+                </div>
+                
+                <h1 class="name">فروتن پور لنگرودی</h1>
+                <h2 class="title">نویسنده</h2>
+
+                <!-- بخش درباره من -->
+                <div class="about-me">
+                    <h3 class="section-title">درباره من</h3>
+                    <p class="about-text">
+                        پیش از این، با نوشتن فقط افکارم را روی کاغذ می‌آوردم، اما حالا با نوشتن زمان را به بازی می‌گیرم؛ زمانی که عصاره‌اش در قالب جوهر خودنویس روی سپیدی کاغذ می‌ریزد، خودش را کش می‌آورد، لم می‌دهد و برایم قیافه می‌گیرد.
+                    </p>
+                </div>
+
+                <!-- بخش معرفی کتاب جدید -->
+                <div class="book-showcase">
+                    <div class="book-cover-wrapper">
+                        <!-- عکس جلد کتاب را در پوشه public با نام book-cover.jpg قرار دهید -->
+                        <img src="/book-cover.jpg" alt="عنوان کتاب" class="book-cover" />
+                    </div>
+                    <div class="book-info">
+                        <h3 class="section-title">آخرین اثر منتشر شده</h3>
+                        <h4 class="book-title">عنوان کتاب شما</h4>
+                        <p class="book-description">
+                            در این بخش می‌توانید خلاصه‌ای از داستان یا توضیحاتی درباره کتاب جدید خود را بنویسید. متن باید جذاب باشد و مخاطب را به خواندن یا خرید کتاب ترغیب کند. می‌توانید درباره تم اصلی داستان و حسی که به خواننده منتقل می‌کند بنویسید.
+                        </p>
+                        
+                        <!-- دکمه‌های خرید و دانلود (منتقل شده به این بخش) -->
+                        <div class="book-actions">
+                            <a href="#" target="_blank" class="btn btn-primary">
+                                <svg viewBox="0 0 24 24" class="btn-icon"><path d="M21 5c-1.11-.9-2.67-1.5-4.5-1.5-1.83 0-3.39.6-4.5 1.5-1.11-.9-2.67-1.5-4.5-1.5-1.83 0-3.39.6-4.5 1.5V22c1.11-.9 2.67-1.5 4.5-1.5 1.83 0 3.39.6 4.5 1.5 1.11-.9 2.67-1.5 4.5-1.5 1.83 0 3.39.6 4.5 1.5V5z"/></svg>
+                                خرید فیزیکی
+                            </a>
+                            <a href="#" target="_blank" class="btn btn-secondary">
+                                <svg viewBox="0 0 24 24" class="btn-icon"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                                دانلود PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- بخش شبکه‌های اجتماعی -->
+                <div class="social-links">
+                    <a href="mailto:ali.forotan.pour.langroudi@gmail.com" aria-label="ایمیل" class="social-icon">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </a>
+                    <a href="https://t.me/EqlimeForotaneVazheha" target="_blank" aria-label="تلگرام" class="social-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.68a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.54-.37-.62-.2-1.12-.31-1.08-.64.02-.18.28-.36.78-.54 2.44-1.06 4.07-1.76 4.89-2.1.45-.17.8-.3 1.05-.4.46-.2.88-.27 1.16-.16.07.02.14.06.2.12.06.07.09.16.08.3z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/forotanlangroudi" target="_blank" aria-label="اینستاگرام" class="social-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.817 1.713 4.965 4.965.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.248-1.718 4.817-4.965 4.965-1.265.058-1.645.069-4.849.069-3.204 0-3.584-.012-4.849-.069-3.26-.149-4.817-1.718-4.965-4.965-.058-1.265-.07-1.645-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.247 1.718-4.817 4.965-4.965 1.265-.058 1.644-.07 4.849-.07zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.272 2.695.072 7.053.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.277.058 1.686.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-10.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                </div>
+
+            </div>
+        </main>
+    </body>
 </html>
+
+<!-- اسکریپت تغییر تم -->
+<script is:inline>
+    const html = document.documentElement;
+    const toggleBtn = document.getElementById('theme-toggle');
+    const sunIcon = document.getElementById('icon-sun');
+    const moonIcon = document.getElementById('icon-moon');
+
+    const applyTheme = (theme) => {
+        html.setAttribute('data-theme', theme);
+        if (theme === 'dark') {
+            sunIcon.style.display = 'block';
+            moonIcon.style.display = 'none';
+        } else {
+            sunIcon.style.display = 'none';
+            moonIcon.style.display = 'block';
+        }
+    };
+
+    // بارگذاری تم ذخیره شده
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(savedTheme);
+
+    // رویداد کلیک
+    toggleBtn.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+</script>
+
+<style is:global>
+    /* --- پالت رنگی حالت تاریک (پیش‌فرض) --- */
+    :root {
+        --bg-main: #0C191A;
+        --text-main: #EDE5DD;
+        --accent-color: #C5A065;
+        --border-color: #1A3B3D;
+        --text-muted: #8FA3A5;
+        --card-bg: rgba(12, 25, 26, 0.85);
+    }
+
+    /* --- پالت رنگی حالت روشن --- */
+    [data-theme="light"] {
+        --bg-main: #F4F1ED; /* کرمی/پوستی بسیار روشن */
+        --text-main: #0C191A; /* استفاده از رنگ تیره اصلی به عنوان متن */
+        --accent-color: #A68B4B; /* طلایی کمی تیره‌تر برای کنتراست بهتر روی پس‌زمینه روشن */
+        --border-color: #D6D1CA; /* حاشیه خاکستری گرم */
+        --text-muted: #6B7B7C; /* متن‌های کم‌رنگ‌تر */
+        --card-bg: rgba(255, 255, 255, 0.7); /* پس‌زمینه کارت سفید شفاف */
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Vazirmatn', sans-serif;
+    }
+
+    body {
+        background-color: var(--bg-main);
+        color: var(--text-main);
+        min-height: 100vh;
+        overflow-x: hidden;
+        transition: background-color 0.4s ease, color 0.4s ease; /* انیمیشن تغییر رنگ */
+    }
+
+    /* مخفی کردن نوار ابزار Astro */
+    astro-dev-toolbar {
+        display: none !important;
+    }
+
+    /* --- استایل دکمه حباب آبی تغییر تم --- */
+    .theme-toggle {
+        position: fixed;
+        top: 20px;
+        left: 20px; /* در RTL این در سمت راست بالا قرار می‌گیرد */
+        z-index: 100;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid rgba(33, 150, 243, 0.4);
+        background-color: rgba(33, 150, 243, 0.15); /* آبی شفاف */
+        backdrop-filter: blur(12px); /* افکت شیشه مات */
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 4px 15px rgba(33, 150, 243, 0.25), inset 0 0 10px rgba(33, 150, 243, 0.1);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #2196F3; /* رنگ آیکون */
+        transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+        background-color: rgba(33, 150, 243, 0.3);
+        box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4), inset 0 0 15px rgba(33, 150, 243, 0.2);
+        transform: scale(1.05);
+    }
+
+    #icon-moon {
+        display: none; /* به صورت پنهان تا جاوااسکریپت آن را مدیریت کند */
+    }
+
+    .pattern-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: 
+            linear-gradient(90deg, var(--border-color) 1px, transparent 1px),
+            linear-gradient(0deg, var(--border-color) 2px, transparent 2px),
+            var(--bg-main);
+        background-size: 80px 100%, 100% 200px;
+        opacity: 0.3;
+        transition: background 0.4s ease;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .profile-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 40px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        text-align: center;
+        transition: background 0.4s ease, border-color 0.4s ease;
+    }
+
+    .profile-image-wrapper {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        border: 3px solid var(--accent-color);
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        transition: border-color 0.4s ease;
+    }
+
+    .profile-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .name {
+        font-size: 2.2rem;
+        color: var(--text-main);
+        margin-bottom: 8px;
+        font-weight: 800;
+    }
+
+    .title {
+        font-size: 1.2rem;
+        color: var(--accent-color);
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin-bottom: 40px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid var(--border-color);
+        transition: color 0.4s ease, border-color 0.4s ease;
+    }
+
+    .about-me {
+        margin-bottom: 40px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid var(--border-color);
+        text-align: justify;
+        transition: border-color 0.4s ease;
+    }
+
+    .about-text {
+        font-size: 1.05rem;
+        line-height: 2;
+        color: var(--text-muted);
+        transition: color 0.4s ease;
+    }
+
+    .section-title {
+        color: var(--text-main);
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        text-align: right;
+    }
+
+    /* --- استایل بخش معرفی کتاب جدید --- */
+    .book-showcase {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 40px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid var(--border-color);
+        text-align: right;
+        align-items: center; /* تراز عمودی در وسط */
+        transition: border-color 0.4s ease;
+    }
+
+    .book-cover-wrapper {
+        flex: 0 0 140px; /* عرض ثابت برای عکس جلد */
+        max-width: 140px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        aspect-ratio: 2/3; /* نسبت ابعاد استاندارد برای جلد کتاب */
+        transition: transform 0.3s ease;
+    }
+
+    .book-cover-wrapper:hover {
+        transform: translateY(-5px) scale(1.02);
+    }
+
+    .book-cover {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .book-info {
+        flex: 1;
+    }
+
+    .book-title {
+        font-size: 1.4rem;
+        color: var(--accent-color);
+        margin-bottom: 12px;
+        font-weight: 700;
+    }
+
+    .book-description {
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: var(--text-muted);
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+
+    /* --- استایل بخش دکمه‌های کتاب --- */
+    .book-actions {
+        display: flex;
+        justify-content: flex-start; /* چپ‌چین شدن دکمه‌ها در کنار کتاب */
+        gap: 12px;
+    }
+
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-family: 'Vazirmatn', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .btn-icon {
+        width: 18px;
+        height: 18px;
+        fill: currentColor;
+    }
+
+    .btn-primary {
+        background-color: var(--text-main);
+        color: var(--bg-main);
+        border: 1px solid var(--text-main);
+    }
+
+    .btn-primary:hover {
+        background-color: transparent;
+        color: var(--text-main);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .btn-secondary {
+        background-color: transparent;
+        color: var(--text-main);
+        border: 1px solid var(--text-main);
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--text-main);
+        color: var(--bg-main);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* --- استایل شبکه‌های اجتماعی با افکت حباب آبی --- */
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 10px; 
+        padding-top: 10px; 
+    }
+
+    .social-icon {
+        color: var(--text-muted);
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: transparent;
+    }
+
+    .social-icon:hover {
+        color: #ffffff;
+        background-color: #2196F3;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 10px rgba(33, 150, 243, 0.4);
+    }
+
+    .social-icon svg {
+        width: 20px;  
+        height: 20px; 
+        fill: currentColor;
+    }
+
+    /* ریسپانسیو برای موبایل */
+    @media (max-width: 600px) {
+        .container {
+            margin: 20px auto;
+            padding: 15px;
+        }
+        .profile-card {
+            padding: 25px;
+        }
+        .name {
+            font-size: 1.8rem;
+        }
+        
+        /* تبدیل چیدمان کتاب به حالت ستونی (عمودی) در موبایل */
+        .book-showcase {
+            flex-direction: column;
+            text-align: center; /* وسط‌چین کردن متن‌ها در موبایل */
+            align-items: center;
+        }
+        .book-cover-wrapper {
+            flex: none;
+            width: 160px;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+        .section-title, .book-title {
+            text-align: center;
+        }
+        .book-info {
+            width: 100%;
+        }
+        .book-actions {
+            justify-content: center; /* وسط‌چین کردن دکمه‌ها در موبایل */
+        }
+        
+        /* جابجایی دکمه تم در موبایل تا با کارت تداخل نداشته باشد */
+        .theme-toggle {
+            top: 10px;
+            left: 10px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+</style>
