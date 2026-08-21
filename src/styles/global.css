@@ -9,10 +9,16 @@
 @layer base {
   body {
     font-family: 'Vazirmatn', sans-serif;
-    background-color: #002B36;
-    color: #ffffff;
+    background-color: #142B4A;
+    color: #EAF1F6;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Estedad', sans-serif;
   }
 }
